@@ -63,7 +63,7 @@ public class Guesser{
      * the player.
      */
     private String getReply(){
-        String reply = null;
+        String reply;
         // Write code here which reads a String from the console.
         // As long as it is not a valid reply (one of "T" and "F")
         // write an error message, and read a new reply.
@@ -108,5 +108,15 @@ public class Guesser{
     @Override
     public String toString() {
         return "low: " + low + " high: " + high;
+    }
+
+    private String readLine(){
+        // If there is no System console, use a scanner
+        if(System.console() == null){
+            return new java.util.Scanner(System.in).nextLine();
+        }else{
+            // there was a System console, so we can use it
+            return System.console().readLine();
+        }
     }
 }
