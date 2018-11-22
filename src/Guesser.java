@@ -63,7 +63,12 @@ public class Guesser{
      * the player.
      */
     private String getReply(){
-        String reply;
+        String reply = readLine();
+
+        while(reply == null && !reply.equalsIgnoreCase("T") && !reply.equalsIgnoreCase("F") ) {
+            System.out.println("Please answer T or F");
+            reply = readLine();
+        }
         // Write code here which reads a String from the console.
         // As long as it is not a valid reply (one of "T" and "F")
         // write an error message, and read a new reply.
