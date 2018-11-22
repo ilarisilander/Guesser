@@ -65,7 +65,7 @@ public class Guesser{
     private String getReply(){
         String reply = readLine();
 
-        while(reply == null && !reply.equalsIgnoreCase("T") && !reply.equalsIgnoreCase("F") ) {
+        while(reply == null || !reply.equalsIgnoreCase("T") && !reply.equalsIgnoreCase("F") ) {
             System.out.println("Please answer T or F");
             reply = readLine();
         }

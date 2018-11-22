@@ -12,8 +12,20 @@ public class GuessingGame {
             p2 = "1000";
         }
 
-        int z = Integer.parseInt(p1);
-        int x = Integer.parseInt(p2);
+        int z = 0;
+        try {
+            z = Integer.parseInt(p1);
+        } catch (NumberFormatException e) {
+            System.out.println("You gotta choose an integer as an argument");
+            System.out.println("Default values will be used in this game");
+        }
+        int x = 1000;
+        try {
+            x = Integer.parseInt(p2);
+        } catch (NumberFormatException e) {
+            System.out.println("You gotta choose an integer as an argument");
+            System.out.println("Default values will be used in this game");
+        }
 
         Guesser guesser = new Guesser(z,x);
 
